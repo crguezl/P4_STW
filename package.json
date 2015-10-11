@@ -1,0 +1,22 @@
+{
+  "name": "Conversor",
+  "version": "0.0.1",
+  "description": "Conversor de diferentes medidas",
+  "main": "temperature.js",
+  "scripts": {
+    "test": "open test/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alu0100698862/P3_STW.git"
+  },
+  "keywords": [
+    "conversor"
+  ],
+  "author": "Carlota Lázaro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alu0100698862/P3_STW/issues"
+  },
+  "homepage": "https://github.com/alu0100698862/P3_STW"
+}
