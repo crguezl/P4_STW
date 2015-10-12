@@ -2,8 +2,8 @@
     "use strict";
     
     function Medida(valor,tipo) {
-        this.valor = valor || 0;
-        this.tipo = tipo || "";
+        this.valor = valor || "0";
+        this.tipo = tipo || "C" || "F" || "";
     }
     
     

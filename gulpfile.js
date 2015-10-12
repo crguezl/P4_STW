@@ -1,13 +1,17 @@
-var gulp    = require('gulp'),
-    gutil   = require('gulp-util'),
-    uglify  = require('gulp-uglify'),
-    concat  = require('gulp-concat');
-var del     = require('del');
-var minifyHTML = require('gulp-minify-html');
-var minifyCSS  = require('gulp-minify-css');
+var gulp        = require('gulp'),
+    gutil       = require('gulp-util'),
+    uglify      = require('gulp-uglify'),
+    concat      = require('gulp-concat');
+    del         = require('del');
+    minifyHTML  = require('gulp-minify-html');
+    minifyCSS   = require('gulp-minify-css');
+    imagemin    = require("gulp-imagemin");
+    notify      = require("gulp-notify");
+    open        = require("gulp-open");
+    
 
 gulp.task('minify', function () {
-  gulp.src('temperature.js')
+  gulp.src('./js/temperature.js')
   .pipe(uglify())
   .pipe(gulp.dest('minified'));
 
@@ -15,7 +19,7 @@ gulp.task('minify', function () {
     .pipe(minifyHTML())
     .pipe(gulp.dest('./minified/'))
 
-  gulp.src('./*.css')
+  gulp.src('./css/*.css')
    .pipe(minifyCSS({keepBreaks:true}))
    .pipe(gulp.dest('./minified/'))
 });
