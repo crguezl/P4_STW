@@ -12,10 +12,10 @@ describe("Temperatura", function() {
             expect(temperatura.valor).not.equal("3.25");
         });
         
-       /* it("Debe tener un tipo asignado C", function() {
+        it("", function() {
             var temperatura = new Temperatura();
-            expect(temperatura.tipo).string("C");
-        });*/
+            expect(temperatura.tipo).;
+        });
     });
 });
 

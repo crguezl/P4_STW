@@ -27,6 +27,9 @@ function Temperatura(valor,tipo) {
     }
     converted.innerHTML = result;
   }
+  this.getValores = function getValores(valor,tipo) {
+    return this.valor + this.tipo;
+  }
 
 }
 
@@ -45,37 +48,16 @@ exports.calculate = function calculate() {
     var num = m[1];
     num = parseFloat(num);
     var type = m[2];
-    console.log(type);
 
    if (type == 'c' || type == 'C' || type == 'f' || type == 'F') {
-     console.log("HOla");
      var temperatura = new Temperatura(num,type);
-     console.log("Holaaa");
      temperatura.calcular();
-     console.log("Hooooooooolaaaaa");
    }
 
    else {
-     console.log("Genero objeto medida");
      var medida = new Medida(num,type);
      medida.mostrar();
    }
-   /*if (type != 'c' || type != 'C' || type != 'f' || type != 'F') {
-     console.log("Genero objeto medida");
-     var medida = new Medida(num,type);
-     medida.mostrar();
-   }*/
-  /*else {
-    console.log("Else");
-    if(type != 'c' || type != 'C' || type != 'f' || type != 'F') {
-      console.log("Genero objeto medida");
-      var medida = new Medida(num,type);
-      medida.mostrar();
-    }
-    console.log("Chivato");
-  }
-  console.log("JA");*/
-
   }
 }
 
