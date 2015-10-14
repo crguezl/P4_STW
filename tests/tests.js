@@ -28,10 +28,6 @@ describe("Temperatura", function() {
             var temperatura = new Temperatura();
             expect(temperatura.result).not.to.be.null;
         });
-        it("El resultado debe ser un C o un F", function() {
-            var temperatura = new Temperatura();
-            expect(temperatura.calcular()).to.not.be.undefined;
-        });
     });
 });
 

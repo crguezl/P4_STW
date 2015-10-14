@@ -6,7 +6,7 @@ function Medida(valor,tipo) {
   this.valor = valor || "0";
   this.tipo = tipo;
   this.mostrar = function mostrar() {
-    converted.innerHTML = "Se ha introducido una medida";
+    return = "Se ha introducido una medida";
   }
 }
 
@@ -54,7 +54,7 @@ exports.calculate = function calculate() {
 
    else {
      var medida = new Medida(num,type);
-     medida.mostrar();
+     converted.innerHTML = medida.mostrar();
    }
   }
 }
