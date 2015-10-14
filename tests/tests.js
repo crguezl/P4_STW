@@ -31,5 +31,32 @@ describe("Temperatura", function() {
     });
 });
 
+describe("SinonJS", function() {
+    var sandbox;
+    
+    beforeEach(function(){
+        sandbox = sinon.sandbox.create();
+        
+        sandbox.stub(window.console, "log");
+        sandbox.stub(window.console, "error");
+    });
+    
+    afterEach(function() {
+        sandbox.restore();
+    });
+    
+    describe("Debería mostrar un error si se pasa nada", function() {
+        it("Debería mostrar un error si se pasa nada", function() {
+            (new Temperatura()).calcular();
+        
+           // sinon.assert.notCalled(console.log);
+            //sinon.assert.calledOnce(console.error);
+            sinon.assert.calledWithExactly(console.error, "faltan argumentos", "")
+            
+        });
+        
+    });
+});
+
 
 // http://issuu.com/samuelsantos52/docs/backbone.js_testing
