@@ -10,10 +10,12 @@ function Medida(valor,tipo) {
   }
 }
 
+exports.Medida = Medida;
+
 Temperatura.prototype = new Medida();
 
 function Temperatura(valor,tipo) {
-  this.valor = valor || "0"; //¿Se tienen que volver a declarar?
+  this.valor = valor || "0"; 
   this.tipo = tipo;
   var result;
   this.calcular = function calcular(valor,tipo) {
@@ -27,9 +29,6 @@ function Temperatura(valor,tipo) {
     }
     converted.innerHTML = result;
   }
-  this.getValores = function getValores(valor,tipo) {
-    return this.valor + this.tipo;
-  }
 
 }
 
@@ -39,7 +38,6 @@ exports.calculate = function calculate() {
 
   var original = document.getElementById("original");
   var temp = original.value;
-  //var regex = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([cCfFgG])\s*$/i;
   var regex = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([aAbBcCdDeEfFgG])\s*$/i;
 
   var m = temp.match(regex);
