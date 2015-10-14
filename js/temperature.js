@@ -6,7 +6,7 @@ function Medida(valor,tipo) {
   this.valor = valor || "0";
   this.tipo = tipo;
   this.mostrar = function mostrar() {
-    return = "Se ha introducido una medida";
+    return "Se ha introducido una medida";
   }
 }
 
@@ -22,12 +22,14 @@ function Temperatura(valor,tipo) {
     if(this.tipo == 'c' || this.tipo == 'C') {
       result = (this.valor *9/5)+32;
       result = result + " Farenheit";
+      
     }
     else {
       result = (this.valor - 32)*5/9;
       result = result + " Celsius";
     }
-    converted.innerHTML = result;
+   // converted.innerHTML = result;
+   return result;
   }
 
 }
@@ -49,7 +51,7 @@ exports.calculate = function calculate() {
 
    if (type == 'c' || type == 'C' || type == 'f' || type == 'F') {
      var temperatura = new Temperatura(num,type);
-     temperatura.calcular();
+     converted.innerHTML = temperatura.calcular();
    }
 
    else {

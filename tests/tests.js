@@ -31,13 +31,5 @@ describe("Temperatura", function() {
     });
 });
 
-describe("Calcular", function() {
-    describe("Funcion calcular", function() {
-        it("El resultado puede ser una medida", function() {
-            var calcular = new calculate();
-            expect(calcular.original).a('string');
-        });
-    });
-});
 
 // http://issuu.com/samuelsantos52/docs/backbone.js_testing
