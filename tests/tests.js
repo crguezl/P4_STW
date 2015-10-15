@@ -1,5 +1,6 @@
 var expect = chai.expect;
 
+
 describe("Medida", function() {
     describe("funcion mostrar", function() {
         it("Se debe introducir una medida", function() {
@@ -47,16 +48,20 @@ describe("SinonJS", function() {
     
     describe("Debería mostrar un error si se pasa nada", function() {
         it("Debería mostrar un error si se pasa nada", function() {
-            (new Temperatura()).calcular();
-        
-           // sinon.assert.notCalled(console.log);
-            //sinon.assert.calledOnce(console.error);
-            sinon.assert.calledWithExactly(console.error, "faltan argumentos", "")
+            new Temperatura();
+            sinon.assert.notCalled(console.log);
+            sinon.assert.calledOnce(console.error);
+            sinon.assert.calledWithExactly(console.error,"hola");
             
+        });
+        it("Mostrar medida", function() {
+            new Medida();
+            sinon.assert.notCalled(console.log);
+            sinon.assert.calledOnce(console.error);
+            sinon.assert.calledWithExactly(console.error,"medida");
         });
         
     });
 });
 
 
-// http://issuu.com/samuelsantos52/docs/backbone.js_testing

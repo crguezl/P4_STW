@@ -5,6 +5,7 @@
 function Medida(valor,tipo) {
   this.valor = valor || "0";
   this.tipo = tipo;
+  console.error("medida");
   this.mostrar = function mostrar() {
     return "Se ha introducido una medida";
   }
@@ -17,8 +18,10 @@ Temperatura.prototype = new Medida();
 function Temperatura(valor,tipo) {
   this.valor = valor || "0"; 
   this.tipo = tipo;
+  console.error("hola");
   var result;
   this.calcular = function calcular(valor,tipo) {
+    
     if(this.tipo == 'c' || this.tipo == 'C') {
       result = (this.valor *9/5)+32;
       result = result + " Farenheit";
