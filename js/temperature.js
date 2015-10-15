@@ -18,7 +18,7 @@ Temperatura.prototype = new Medida();
 function Temperatura(valor,tipo) {
   this.valor = valor || "0"; 
   this.tipo = tipo;
-  console.error("hola");
+  console.error("temperatura");
   var result;
   this.calcular = function calcular(valor,tipo) {
     
@@ -31,7 +31,7 @@ function Temperatura(valor,tipo) {
       result = (this.valor - 32)*5/9;
       result = result + " Celsius";
     }
-   // converted.innerHTML = result;
+   
    return result;
   }
 
@@ -43,7 +43,7 @@ exports.calculate = function calculate() {
 
   var original = document.getElementById("original");
   var temp = original.value;
-  var regex = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([aAbBcCdDeEfFgG])\s*$/i;
+  var regex = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ])\s*$/i;
 
   var m = temp.match(regex);
 

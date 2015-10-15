@@ -47,14 +47,14 @@ describe("SinonJS", function() {
     });
     
     describe("Debería mostrar un error si se pasa nada", function() {
-        it("Debería mostrar un error si se pasa nada", function() {
+        it("Temperatura", function() {
             new Temperatura();
             sinon.assert.notCalled(console.log);
             sinon.assert.calledOnce(console.error);
-            sinon.assert.calledWithExactly(console.error,"hola");
+            sinon.assert.calledWithExactly(console.error,"temperatura");
             
         });
-        it("Mostrar medida", function() {
+        it("Mmdida", function() {
             new Medida();
             sinon.assert.notCalled(console.log);
             sinon.assert.calledOnce(console.error);
