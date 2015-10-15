@@ -43,7 +43,6 @@ exports.calculate = function calculate() {
 
   var original = document.getElementById("original");
   var temp = original.value;
-  //var regex = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ])\s*$/i;
   var regex = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z]|[A-Z])\s*$/i;
 
   var m = temp.match(regex);
