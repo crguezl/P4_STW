@@ -9,4 +9,8 @@ Para acceder al conversor, haga click en el siguiente enlace:
 
 [conversor web](http://alu0100698862.github.io/P3_STW/)
 
+Para acceder a las pruebas, haga click en el siguiente enlace:
+
+[pruebas](http://alu0100698862.github.io/P3_STW/tests/)
+
 Práctica realizada por Carlota Lázaro. 
