@@ -54,7 +54,7 @@ describe("SinonJS", function() {
             sinon.assert.calledWithExactly(console.error,"temperatura");
             
         });
-        it("Mmdida", function() {
+        it("Medida", function() {
             new Medida();
             sinon.assert.notCalled(console.log);
             sinon.assert.calledOnce(console.error);
