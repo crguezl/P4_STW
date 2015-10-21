@@ -32,7 +32,7 @@ describe("Temperatura", function() {
     });
 });
 
-describe("SinonJS", function() {
+/*describe("SinonJS", function() {
     var sandbox;
     
     beforeEach(function(){
@@ -62,6 +62,6 @@ describe("SinonJS", function() {
         });
         
     });
-});
+});*/
 
 
