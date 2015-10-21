@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Wed Oct 21 2015 13:05:54 GMT+0000 (UTC)
+// Generated on Wed Feb 18 2015 14:04:27 GMT+0000 (WET)
 
 module.exports = function(config) {
   config.set({
@@ -10,27 +10,32 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai', 'sinon'],
+    frameworks: ['mocha', 'chai'],
 
+    client: {
+          mocha: {
+            ui: 'bdd'
+          }
+    },
 
     // list of files / patterns to load in the browser
     files: [
-      'tests/index.html',
-      'js/*.js',
-      'tests/*.js',
+      'index.html',
+      '*.js',
+      'vendor/*.js'
     ],
 
 
     // list of files to exclude
     exclude: [
-      'gulpfile.js',
+      'gulpfile.js'
     ],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'index.html': ['html2js']
+         'index.html': ['html2js']
     },
 
 
@@ -50,7 +55,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
 
 
     // enable / disable watching file and executing tests whenever any file changes
@@ -59,25 +64,11 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['Firefox'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
-  })
-  
-  config.set({
-    frameworks: ['mocha'],
-
-    files: [
-      '*.js'
-    ],
-
-    client: {
-      mocha: {
-        ui: 'tdd'
-      }
-    }
-  })
-}
+  });
+};
