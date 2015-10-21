@@ -2,23 +2,24 @@
   
 "use strict";
 
+console.log("entro");
+
 function Medida(valor,tipo) {
   this.valor = valor || "0";
   this.tipo = tipo;
-  console.error("medida");
+  console.log("medida");
   this.mostrar = function mostrar() {
     return "Se ha introducido una medida";
   }
 }
 
-exports.Medida = Medida;
 
 Temperatura.prototype = new Medida();
 
 function Temperatura(valor,tipo) {
   this.valor = valor || "0"; 
   this.tipo = tipo;
-  console.error("temperatura");
+  console.log("temperatura");
   var result;
   this.calcular = function calcular(valor,tipo) {
     
@@ -37,13 +38,13 @@ function Temperatura(valor,tipo) {
 
 }
 
-exports.Temperatura = Temperatura;
 
-exports.calculate = function calculate() {
+this.addEventListener('message', function(event) {
 
-  var original = document.getElementById("original");
+  var aux = event.data;
   var temp = original.value;
   var regex = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z]|[A-Z])\s*$/i;
+  var respuesta;
 
   var m = temp.match(regex);
 
@@ -52,16 +53,24 @@ exports.calculate = function calculate() {
     num = parseFloat(num);
     var type = m[2];
 
-   if (type == 'c' || type == 'C' || type == 'f' || type == 'F') {
-     var temperatura = new Temperatura(num,type);
-     converted.innerHTML = temperatura.calcular();
-   }
+    if (type == 'c' || type == 'C' || type == 'f' || type == 'F') {
+      var temperatura = new Temperatura(num,type);
+      respuesta = temperatura.calcular();
+     
+    }
+    else {
+      var medida = new Medida(num,type);
+      respuesta = medida.mostrar();
+    }
 
-   else {
-     var medida = new Medida(num,type);
-     converted.innerHTML = medida.mostrar();
-   }
+    this.postMessage(respuesta);
+
   }
-}
+}, false);
+
 
 })(this);
+
+
+
+
