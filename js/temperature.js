@@ -40,13 +40,10 @@ function Temperatura(valor,tipo) {
 this.addEventListener('message', function(event) {
 
   var aux = event.data;
-  //console.log(event.data);
   var regex = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z]|[A-Z])\s*$/i;
   var respuesta;
-  //console.log(regex);
-  //console.log(aux);
   var m = aux.match(regex);
-  console.log(m);
+
 
   if(m) {
     var num = m[1];
