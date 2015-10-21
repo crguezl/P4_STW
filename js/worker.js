@@ -1,19 +1,24 @@
-var elem = document.getElementById('original');
+"use strict";
+
+var w = new Worker('js/temperature.js');
 
 function iniciarWebWorker() {
-    var w;    
-    if(typeof(Worker)!="undefined") {
-        if(typeof(w)=="undefined") {
-            w = new Worker('js/temperature.js');
+   /* var w; */   
+   /* if(typeof(Worker)!="undefined") {
+        if(typeof(w)=="undefined") {*/
+            var elem = document.getElementById('original').value;
             w.postMessage(elem);
+            console.log(elem);
         }
+     
         w.onmessage = function(event) {
-            document.getElementById('output').innerHTML = event.data;
+            console.log(event.data);
+            document.getElementById('converted').innerHTML = event.data;
         }
-    }
-    else {
+   // }
+   /* else {
         document.getElementById('output').innerHTML = "Tu navegador no soporta workers"; 
-    }
-}
+    }*/
+//}
     
     
