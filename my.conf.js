@@ -22,7 +22,7 @@ module.exports = function(config) {
     files: [
       'index.html',
       '*.js',
-      'vendor/*.js'
+      'js/*.js'
     ],
 
 
